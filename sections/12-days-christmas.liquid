@@ -254,8 +254,9 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
   const timeDifference = currentDate.getTime() - targetDate.getTime();
   const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-  if (daysDifference > 2)
+  if (daysDifference > 2){
     slidesContainer.scrollLeft += slideWidth
+    }
 
   console.log(`The current date is between December 1 and December 12, 2023.`);
   console.log(`Days difference from December 1: ${daysDifference}`);
