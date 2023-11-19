@@ -272,6 +272,15 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
        }
     }
 
+      // Check if the current slide index is less than daysDifference
+  if (index < daysDifference) {
+    // Add "Expired" text to the image
+    const expiredText = document.createElement('div');
+    expiredText.classList.add('expired-text');
+    expiredText.textContent = 'Expired';
+    image.parentElement.appendChild(expiredText);
+  }
+
   console.log(`The current date is between December 1 and December 12, 2023.`);
   console.log(`Days difference from December 1: ${daysDifference}`);
 } else {
