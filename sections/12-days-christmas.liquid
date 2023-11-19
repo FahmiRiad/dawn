@@ -14,4 +14,95 @@
     <div class="m_slide"><img src="https://ci3.googleusercontent.com/proxy/ZYGJMzNSWR9X9FocHPDGWMrB3q99cgk3JC3AmQK_38PMO8yztjPg3tT7Qvc6gjf7SIHtpwoUg8JvdLA5E_-fogKo5yhgh9LGVLMcsm06-LX1oQiu-Nq1pl-BnXiR=s0-d-e1-ft#https://cdn.shopify.com/s/files/1/1250/3061/files/12-Days.png?v=1700241748" alt="Image 12"></div>
   </div>
 
+    <div class="slider-container">
+    <div class="slider">
+      <div class="slide" id="day1"> <!-- Add similar divs for each day -->
+        <img src="https://ci3.googleusercontent.com/proxy/ZYGJMzNSWR9X9FocHPDGWMrB3q99cgk3JC3AmQK_38PMO8yztjPg3tT7Qvc6gjf7SIHtpwoUg8JvdLA5E_-fogKo5yhgh9LGVLMcsm06-LX1oQiu-Nq1pl-BnXiR=s0-d-e1-ft#https://cdn.shopify.com/s/files/1/1250/3061/files/12-Days.png?v=1700241748" alt="Day 1">
+      </div>
+
+      <div class="slide" id="day2"> <!-- Add similar divs for each day -->
+        <img src="https://ci3.googleusercontent.com/proxy/ZYGJMzNSWR9X9FocHPDGWMrB3q99cgk3JC3AmQK_38PMO8yztjPg3tT7Qvc6gjf7SIHtpwoUg8JvdLA5E_-fogKo5yhgh9LGVLMcsm06-LX1oQiu-Nq1pl-BnXiR=s0-d-e1-ft#https://cdn.shopify.com/s/files/1/1250/3061/files/12-Days.png?v=1700241748" alt="Day 1">
+      </div>
+
+      <div class="slide" id="day3"> <!-- Add similar divs for each day -->
+        <img src="https://ci3.googleusercontent.com/proxy/ZYGJMzNSWR9X9FocHPDGWMrB3q99cgk3JC3AmQK_38PMO8yztjPg3tT7Qvc6gjf7SIHtpwoUg8JvdLA5E_-fogKo5yhgh9LGVLMcsm06-LX1oQiu-Nq1pl-BnXiR=s0-d-e1-ft#https://cdn.shopify.com/s/files/1/1250/3061/files/12-Days.png?v=1700241748" alt="Day 1">
+      </div>
+
+      <div class="slide" id="day4"> <!-- Add similar divs for each day -->
+        <img src="https://ci3.googleusercontent.com/proxy/ZYGJMzNSWR9X9FocHPDGWMrB3q99cgk3JC3AmQK_38PMO8yztjPg3tT7Qvc6gjf7SIHtpwoUg8JvdLA5E_-fogKo5yhgh9LGVLMcsm06-LX1oQiu-Nq1pl-BnXiR=s0-d-e1-ft#https://cdn.shopify.com/s/files/1/1250/3061/files/12-Days.png?v=1700241748" alt="Day 1">
+      </div>
+
+      <div class="slide" id="day5"> <!-- Add similar divs for each day -->
+        <img src="https://ci3.googleusercontent.com/proxy/ZYGJMzNSWR9X9FocHPDGWMrB3q99cgk3JC3AmQK_38PMO8yztjPg3tT7Qvc6gjf7SIHtpwoUg8JvdLA5E_-fogKo5yhgh9LGVLMcsm06-LX1oQiu-Nq1pl-BnXiR=s0-d-e1-ft#https://cdn.shopify.com/s/files/1/1250/3061/files/12-Days.png?v=1700241748" alt="Day 1">
+      </div>
+  
+      <!-- Add slides for the remaining days -->
+    </div>
+  </div>
+<style> 
+.slider-container {
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 1200%; /* 100% * number of days */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 25%; /* Display 4 slides at a time */
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+
+<script> 
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector('.slider');
+  let scrollPosition = 0;
+
+  // Function to update the slider position
+  function updateSlider() {
+    slider.style.transform = `translateX(${-scrollPosition * 25}%)`;
+  }
+
+  // Scroll to the next set of images
+  function next() {
+    if (scrollPosition < 8) { // Assuming you have 12 days and want to display 3.5 at a time
+      scrollPosition++;
+      updateSlider();
+    }
+  }
+
+  // Scroll to the previous set of images
+  function prev() {
+    if (scrollPosition > 0) {
+      scrollPosition--;
+      updateSlider();
+    }
+  }
+
+  // Event listeners for next and previous buttons
+  document.addEventListener('click', function (event) {
+    if (event.target.classList.contains('next-btn')) {
+      next();
+    } else if (event.target.classList.contains('prev-btn')) {
+      prev();
+    }
+  });
+});
+
+
+</script>
 {% schema %} { "name" : "12 Days Module", "class" : "twelve-days-module", "settings" : [ { "type": "image_picker", "id": "backgroundImage", "label": "Background Image - Desktop" }, { "type": "image_picker", "id": "TwelveDaysLogo", "label": "Twelve Days Logo - Desktop" }, { "type": "image_picker", "id": "DayOneImage", "label": "DayOneImage" }, { "type": "text", "id": "introduction", "label": "Introduction" }, { "type": "url", "id": "button_url", "label": "Button URL" }, { "type": "text", "id": "button_text", "label": "Button Text", "default": "SIGN UP NOW" } ], "presets": [{ "name": "12 Days Module", "category": "Image" }] } {% endschema %} 
