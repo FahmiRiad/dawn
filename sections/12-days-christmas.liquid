@@ -301,7 +301,9 @@ slides.forEach((slide, index) => {
     expiredText.classList.add('expired-text');
     expiredText.textContent = 'Expired';
     slide.appendChild(expiredText);
+    slide.classList.add('darken-image');
   }
+  
 
   if (index > daysDifference) {
     // Change the image source to the "12-Days-soon.png"
