@@ -297,6 +297,12 @@ slides.forEach((slide, index) => {
     expiredText.textContent = 'Expired';
     slide.appendChild(expiredText);
   }
+
+  if (index >= daysDifference) {
+    // Change the image source to the "12-Days-soon.png"
+    image.src = 'https://cdn.shopify.com/s/files/1/0582/8971/7433/files/12-Days-soon.png?v=1700430403';
+  }
+  
 });
 
 
