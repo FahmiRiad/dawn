@@ -260,7 +260,7 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
     const slides = document.querySelectorAll('.slide');
     if (daysDifference < slides.length) {
     // Subtracting 1 because array indices start from 0
-       slides[daysDifference].style.boxShadow = '0 0 10px black';
+       slides[daysDifference].style.border = '2px solid red'; // Replace this with your desired style
        }
     }
 
