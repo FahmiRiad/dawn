@@ -230,6 +230,16 @@ footer a {
 footer .heart {
   color: #DC143C;
 }
+
+.expired-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red; /* Change the color to your preference */
+}
 </style>
 
 
@@ -272,14 +282,23 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
        }
     }
 
-      // Check if the current slide index is less than daysDifference
+    // Get all slide elements
+const slides = document.querySelectorAll('.slide');
+
+// Iterate through slides and add "Expired" text to the images
+slides.forEach((slide, index) => {
+  const image = slide.querySelector('img');
+
+  // Check if the current slide index is less than daysDifference
   if (index < daysDifference) {
     // Add "Expired" text to the image
     const expiredText = document.createElement('div');
     expiredText.classList.add('expired-text');
     expiredText.textContent = 'Expired';
-    image.parentElement.appendChild(expiredText);
+    slide.appendChild(expiredText);
   }
+});
+
 
   console.log(`The current date is between December 1 and December 12, 2023.`);
   console.log(`Days difference from December 1: ${daysDifference}`);
