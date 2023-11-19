@@ -241,4 +241,21 @@ prevButton.addEventListener("click", () => {
   const slideWidth = slide.clientWidth;
   slidesContainer.scrollLeft -= slideWidth;
 });
+
+const currentDate = new Date();
+
+// Set the target date to December 1, 2023
+const targetDate = new Date('December 1, 2023');
+
+// Check if the current date is between December 1 and December 12, 2023
+if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
+  // Calculate the difference in days
+  const timeDifference = currentDate.getTime() - targetDate.getTime();
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+  console.log(`The current date is between December 1 and December 12, 2023.`);
+  console.log(`Days difference from December 1: ${daysDifference}`);
+} else {
+  console.log(`The current date is not between December 1 and December 12, 2023.`);
+}
 </script>
