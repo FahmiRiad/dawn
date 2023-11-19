@@ -1,39 +1,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<div class="slider">
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="https://images.pexels.com/photos/4060569/pexels-photo-4060569.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.pexels.com/photos/5601991/pexels-photo-5601991.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.pexels.com/photos/6483585/pexels-photo-6483585.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.pexels.com/photos/5232929/pexels-photo-5232929.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.pexels.com/photos/5797913/pexels-photo-5797913.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="https://images.pexels.com/photos/6102229/pexels-photo-6102229.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-      </div>
-    </div>
-
-    <!-- pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- scrollbar -->
-    <div class="swiper-scrollbar"></div>
-
-    <!-- buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div> 
-</div>
+<section class="slider-wrapper">
+  <button class="slide-arrow" id="slide-arrow-prev">
+    &#8249;
+  </button>
+  
+  <button class="slide-arrow" id="slide-arrow-next">
+    &#8250;
+  </button>
+  
+  <ul class="slides-container" id="slides-container">
+    <li class="slide"></li>
+    <li class="slide"></li>
+    <li class="slide"></li>
+    <li class="slide"></li>
+  </ul>
+</section>
 
 {% schema %}
   {
@@ -75,73 +57,83 @@
 {% endschema %}
 
 <style>
- .slider {
-  margin: 0 auto;
-  max-width: 1200px;
+.slider-wrapper {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
 }
-
-.swiper-container {
-  padding-bottom: 20px;
-}
-
-.swiper-scrollbar {
-  background: #d6d6d6;
-}
-
-.swiper-container-horizontal > .swiper-scrollbar {
-  border-radius: 2px;
-  height: 5px;
-  width: 200px;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.swiper-wrapper img {
+.slides-container {
+  height: calc(100vh - 2rem);
   width: 100%;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  flex: 1 0 100%;
+}
+
+.slides-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+/* WebKit */
+.slides-container::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+}
+
+.slide-arrow {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 4rem;
+  background-color: white;
+  border: none;
+  width: 2rem;
+  font-size: 3rem;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 100ms;
+}
+.slide-arrow:hover,
+.slide-arrow:focus {
+  opacity: 1;
+}
+#slide-arrow-prev {
+  left: 0;
+  padding-left: 0.25rem;
+  border-radius: 0 2rem 2rem 0;
+}
+#slide-arrow-next {
+  right: 0;
+  padding-left: 0.75rem;
+  border-radius: 2rem 0 0 2rem;
 }
 </style>
 
+
 <script>
-var $swiperSelector = $('.swiper-container');
+const slidesContainer = document.getElementById("slides-container");
+const slide = document.querySelector(".slide");
+const prevButton = document.getElementById("slide-arrow-prev");
+const nextButton = document.getElementById("slide-arrow-next");
 
-$swiperSelector.each(function(index) {
-    var $this = $(this);
-    $this.addClass('swiper-slider-' + index);
-    
-    var dragSize = $this.data('drag-size') ? $this.data('drag-size') : 50;
-    var freeMode = $this.data('free-mode') ? $this.data('free-mode') : false;
-    var loop = $this.data('loop') ? $this.data('loop') : false;
-    var slidesDesktop = $this.data('slides-desktop') ? $this.data('slides-desktop') : 4;
-    var slidesTablet = $this.data('slides-tablet') ? $this.data('slides-tablet') : 3;
-    var slidesMobile = $this.data('slides-mobile') ? $this.data('slides-mobile') : 2.5;
-    var spaceBetween = $this.data('space-between') ? $this.data('space-between'): 20;
+nextButton.addEventListener("click", (event) => {
+  const slideWidth = slide.clientWidth;
+    slidesContainer.scrollLeft += slideWidth;
+});
 
-    var swiper = new Swiper('.swiper-slider-' + index, {
-      direction: 'horizontal',
-      loop: loop,
-      freeMode: freeMode,
-      spaceBetween: spaceBetween,
-      breakpoints: {
-        1920: {
-          slidesPerView: slidesDesktop
-        },
-        992: {
-          slidesPerView: slidesTablet
-        },
-        320: {
-           slidesPerView: slidesMobile
-        }
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
-        dragSize: dragSize
-      }
-   });
+prevButton.addEventListener("click", () => {
+  const slideWidth = slide.clientWidth;
+  slidesContainer.scrollLeft -= slideWidth;
 });
 </script>
