@@ -221,7 +221,8 @@
       "settings": {
         "introduction": "",
         "button_url": "",
-        "button_text": "SIGN UP NOW"
+        "button_text": "SIGN UP NOW",
+        "image_1": "shopify:\/\/shop_images\/12-Days.webp"
       }
     }
   },
