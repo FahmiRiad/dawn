@@ -222,7 +222,11 @@
         "introduction": "",
         "button_url": "",
         "button_text": "SIGN UP NOW",
-        "image_1": "shopify:\/\/shop_images\/12-Days.webp"
+        "image_1": "shopify:\/\/shop_images\/12-Days.webp",
+        "image_2": "shopify:\/\/shop_images\/12-Days.webp",
+        "image_3": "shopify:\/\/shop_images\/12-Days.webp",
+        "image_4": "shopify:\/\/shop_images\/12-Days.webp",
+        "image_5": "shopify:\/\/shop_images\/12-Days.webp"
       }
     }
   },
