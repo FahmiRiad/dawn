@@ -226,7 +226,8 @@
         "image_2": "shopify:\/\/shop_images\/12-Days.webp",
         "image_3": "shopify:\/\/shop_images\/12-Days.webp",
         "image_4": "shopify:\/\/shop_images\/12-Days.webp",
-        "image_5": "shopify:\/\/shop_images\/12-Days.webp"
+        "image_5": "shopify:\/\/shop_images\/12-Days.webp",
+        "coming_soon": "shopify:\/\/shop_images\/12-Days-soon.png"
       }
     }
   },
