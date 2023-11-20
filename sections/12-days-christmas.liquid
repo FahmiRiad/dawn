@@ -8,7 +8,11 @@
       <li class="slide">
          <div class="background-slide">
            <a href="#" target="_blank">
-              {{ image_url | image_url: width: 300 | image_tag }}
+             {% if image_url %}
+                {{ image_url | image_url: width: 300 | image_tag }}
+             {% else %}
+                {{ section.settings['coming_soon'] | image_url: width: 300 | image_tag }}
+             {% endif %}
            </a>
          </div>
       </li>
@@ -78,6 +82,12 @@
       "label": "Day 5 image",
       "id": "image_5",
       "info": "Select the image of day5."
+    },
+      {
+      "type": "image_picker",
+      "label": "Coming soon image",
+      "id": "coming_soon",
+      "info": "Select the image of coming soon days."
     }
     ],
     "presets": [{
