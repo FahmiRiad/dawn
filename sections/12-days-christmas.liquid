@@ -357,7 +357,7 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
    if (daysDifference >= 0 && daysDifference < 2 ){
 
        const slides = document.querySelectorAll('.slide');
-       slides[daysDifference].style.boxShadow = '0 0 20px black';
+       //slides[daysDifference].style.boxShadow = '0 0 20px black';
        slides[daysDifference].style.padding = 0;
        slides[daysDifference].style.margin = '0 10px';
    }
@@ -370,7 +370,7 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
     const slides = document.querySelectorAll('.slide');
     if (daysDifference < slides.length) {
     // Subtracting 1 because array indices start from 0
-       slides[daysDifference].style.boxShadow = '0 0 20px black';
+      // slides[daysDifference].style.boxShadow = '0 0 20px black';
        slides[daysDifference].style.padding = 0;
        slides[daysDifference].style.margin = '0 10px';
        
