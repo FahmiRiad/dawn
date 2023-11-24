@@ -378,8 +378,13 @@ if (currentDate >= targetDate && currentDate <= new Date('December 12, 2023')) {
        }
     }
 
-    // Iterate through slides and add "Expired" text to the parent of the images
+    // Get all slide elements
+const slides = document.querySelectorAll('.slide');
+
+// Iterate through slides and add "Expired" text to the images
 slides.forEach((slide, index) => {
+  const image = slide.querySelector('img');
+
   // Check if the current slide index is less than daysDifference
   if (index < daysDifference) {
     // Add "Expired" text to the parent of the slide
@@ -389,7 +394,6 @@ slides.forEach((slide, index) => {
     expiredText.style.color = 'white'; // Set text color to white
     slide.appendChild(expiredText);
   }
-});
   
 
   // if (index > daysDifference) {
