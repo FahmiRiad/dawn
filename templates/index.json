@@ -220,10 +220,9 @@
       "type": "12-days-christmas",
       "settings": {
         "introduction": "",
-        "button_url": "",
-        "button_text": "SIGN UP NOW",
         "image_1": "shopify:\/\/shop_images\/FKC_12DAYS_Day_1_Card.png",
-        "image_2": "shopify:\/\/shop_images\/12-Days.webp",
+        "url_day1": "",
+        "image_2": "shopify:\/\/shop_images\/FKC_12DAYS_Day_5_Card.png",
         "image_3": "shopify:\/\/shop_images\/FKC_12DAYS_Day_3_Card.png",
         "image_4": "shopify:\/\/shop_images\/FKC_12DAYS_Day_4_Card.png",
         "image_5": "shopify:\/\/shop_images\/FKC_12DAYS_Day_5_Card.png",
