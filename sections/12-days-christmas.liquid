@@ -13,7 +13,6 @@
       {% assign day_url = section.settings[url_id] %}
       
       <li class="slide">
-        <div class="background-slide">
           <a href="{{ day_url }}" target="_blank">
             {% if image_url %}
               {{ image_url | image_url: width: 600 | image_tag }}
@@ -21,7 +20,7 @@
               {{ coming_soon_url | image_url: width: 600 | image_tag }}
             {% endif %}
           </a>
-        </div>
+        
       </li>
     {% endfor %}
   </ul>
