@@ -227,7 +227,18 @@
         "image_3": "shopify:\/\/shop_images\/12-Days.webp",
         "image_4": "shopify:\/\/shop_images\/12-Days.webp",
         "image_5": "shopify:\/\/shop_images\/12-Days.webp",
-        "coming_soon": "shopify:\/\/shop_images\/12-Days-soon.png"
+        "coming_soon1": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-1.png",
+        "coming_soon2": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-2.png",
+        "coming_soon3": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-3.png",
+        "coming_soon4": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-4.png",
+        "coming_soon5": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-5.png",
+        "coming_soon6": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-6.png",
+        "coming_soon7": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-7.png",
+        "coming_soon8": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-8.png",
+        "coming_soon9": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-9.png",
+        "coming_soon10": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-10.png",
+        "coming_soon11": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-11.png",
+        "coming_soon12": "shopify:\/\/shop_images\/12_Days_Gift_Graphic-12.png"
       }
     }
   },
