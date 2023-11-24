@@ -391,7 +391,7 @@ slides.forEach((slide, index) => {
     const expiredText = document.createElement('div');
     expiredText.classList.add('expired-text');
     expiredText.textContent = 'EXPIRED';
-    slide.parentNode.appendChild(expiredText);
+    slide.appendChild(expiredText);
     slide.classList.add('darken-image');
   }
   
