@@ -13,7 +13,7 @@
         <div class="background-slide">
           <a href="#" target="_blank">
             {% if image_url %}
-              {{ image_url | image_url: width: 600 | image_tag }}
+              {{ image_url | image_url: width: 1000 | image_tag }}
             {% else %}
               {{ coming_soon_url | image_url: width: 600 | image_tag }}
             {% endif %}
