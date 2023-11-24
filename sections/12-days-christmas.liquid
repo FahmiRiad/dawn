@@ -391,7 +391,7 @@ slides.forEach((slide, index) => {
     const expiredText = document.createElement('div');
     expiredText.classList.add('expired-text');
     expiredText.textContent = 'EXPIRED';
-    slide.appendChild(expiredText);
+    slide.parentNode.appendChild(expiredText);
     slide.classList.add('darken-image');
   }
   
@@ -403,10 +403,4 @@ slides.forEach((slide, index) => {
   
 });
 
-
-  console.log(`The current date is between December 1 and December 12, 2023.`);
-  console.log(`Days difference from December 1: ${daysDifference}`);
-} else {
-  console.log(`The current date is not between December 1 and December 12, 2023.`);
-}
 </script>
