@@ -9,9 +9,12 @@
       {% assign image_url = section.settings[image_id] %}
       {% assign coming_soon_id = 'coming_soon' | append: i %}
       {% assign coming_soon_url = section.settings[coming_soon_id] %}
+      {% assign url_id = 'url_day' | append: i %}
+      {% assign day_url = section.settings[url_id] %}
+      
       <li class="slide">
         <div class="background-slide">
-          <a href="#" target="_blank">
+          <a href="{{ day_url }}" target="_blank">
             {% if image_url %}
               {{ image_url | image_url: width: 600 | image_tag }}
             {% else %}
