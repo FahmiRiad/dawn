@@ -387,10 +387,11 @@ slides.forEach((slide, index) => {
   if (index < daysDifference) {
     // Add "Expired" text to the image
     const expiredText = document.createElement('div');
+    slide.classList.add('darken-image');
     expiredText.classList.add('expired-text');
     expiredText.textContent = 'EXPIRED';
     slide.appendChild(expiredText);
-    slide.classList.add('darken-image');
+    
   }
   
 
